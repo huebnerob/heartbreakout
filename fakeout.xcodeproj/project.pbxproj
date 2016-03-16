@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F834F1891C93A8280015EDAF /* HeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834F1871C93A7040015EDAF /* HeartRate.swift */; };
+		F834F18B1C94BADD0015EDAF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F834F18A1C94BADD0015EDAF /* HealthKit.framework */; };
+		F834F18F1C94BAEF0015EDAF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F834F18E1C94BAEF0015EDAF /* HealthKit.framework */; };
 		F8A886D01C920ED6008B59D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A886CF1C920ED6008B59D2 /* AppDelegate.swift */; };
 		F8A886D21C920ED6008B59D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A886D11C920ED6008B59D2 /* ViewController.swift */; };
 		F8A886D51C920ED6008B59D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8A886D31C920ED6008B59D2 /* Main.storyboard */; };
@@ -19,6 +22,8 @@
 		F8A886F31C920ED6008B59D2 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A886F21C920ED6008B59D2 /* InterfaceController.swift */; };
 		F8A886F51C920ED6008B59D2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A886F41C920ED6008B59D2 /* ExtensionDelegate.swift */; };
 		F8A886F71C920ED6008B59D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8A886F61C920ED6008B59D2 /* Assets.xcassets */; };
+		F8A887071C9252F7008B59D2 /* ShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A887061C9252F7008B59D2 /* ShapeRenderer.swift */; };
+		F8A887081C9252F7008B59D2 /* ShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A887061C9252F7008B59D2 /* ShapeRenderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +69,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F834F1871C93A7040015EDAF /* HeartRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRate.swift; sourceTree = "<group>"; };
+		F834F18A1C94BADD0015EDAF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		F834F18C1C94BADD0015EDAF /* fakeout WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "fakeout WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		F834F18D1C94BAEF0015EDAF /* fakeout.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = fakeout.entitlements; sourceTree = "<group>"; };
+		F834F18E1C94BAEF0015EDAF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		F8A886CC1C920ED6008B59D2 /* fakeout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fakeout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A886CF1C920ED6008B59D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8A886D11C920ED6008B59D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +90,7 @@
 		F8A886F41C920ED6008B59D2 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		F8A886F61C920ED6008B59D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8A886F81C920ED6008B59D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8A887061C9252F7008B59D2 /* ShapeRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeRenderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F834F18F1C94BAEF0015EDAF /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F834F18B1C94BADD0015EDAF /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +116,8 @@
 		F8A886C31C920ED6008B59D2 = {
 			isa = PBXGroup;
 			children = (
+				F834F18E1C94BAEF0015EDAF /* HealthKit.framework */,
+				F834F18A1C94BADD0015EDAF /* HealthKit.framework */,
 				F8A886CE1C920ED6008B59D2 /* fakeout */,
 				F8A886E21C920ED6008B59D2 /* fakeout WatchKit App */,
 				F8A886F11C920ED6008B59D2 /* fakeout WatchKit Extension */,
@@ -123,12 +138,15 @@
 		F8A886CE1C920ED6008B59D2 /* fakeout */ = {
 			isa = PBXGroup;
 			children = (
+				F834F18D1C94BAEF0015EDAF /* fakeout.entitlements */,
 				F8A886CF1C920ED6008B59D2 /* AppDelegate.swift */,
 				F8A886D11C920ED6008B59D2 /* ViewController.swift */,
 				F8A886D31C920ED6008B59D2 /* Main.storyboard */,
 				F8A886D61C920ED6008B59D2 /* Assets.xcassets */,
 				F8A886D81C920ED6008B59D2 /* LaunchScreen.storyboard */,
 				F8A886DB1C920ED6008B59D2 /* Info.plist */,
+				F8A887061C9252F7008B59D2 /* ShapeRenderer.swift */,
+				F834F1871C93A7040015EDAF /* HeartRate.swift */,
 			);
 			path = fakeout;
 			sourceTree = "<group>";
@@ -146,6 +164,7 @@
 		F8A886F11C920ED6008B59D2 /* fakeout WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F834F18C1C94BADD0015EDAF /* fakeout WatchKit Extension.entitlements */,
 				F8A886F21C920ED6008B59D2 /* InterfaceController.swift */,
 				F8A886F41C920ED6008B59D2 /* ExtensionDelegate.swift */,
 				F8A886F61C920ED6008B59D2 /* Assets.xcassets */,
@@ -222,12 +241,24 @@
 				TargetAttributes = {
 					F8A886CB1C920ED6008B59D2 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 74SYXT34UD;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					F8A886DD1C920ED6008B59D2 = {
 						CreatedOnToolsVersion = 7.3;
 					};
 					F8A886EC1C920ED6008B59D2 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 74SYXT34UD;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -287,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A886D21C920ED6008B59D2 /* ViewController.swift in Sources */,
+				F8A887071C9252F7008B59D2 /* ShapeRenderer.swift in Sources */,
 				F8A886D01C920ED6008B59D2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +328,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A886F51C920ED6008B59D2 /* ExtensionDelegate.swift in Sources */,
+				F8A887081C9252F7008B59D2 /* ShapeRenderer.swift in Sources */,
+				F834F1891C93A8280015EDAF /* HeartRate.swift in Sources */,
 				F8A886F31C920ED6008B59D2 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,6 +463,7 @@
 		F8A886FC1C920ED6008B59D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "fakeout WatchKit Extension/fakeout WatchKit Extension.entitlements";
 				INFOPLIST_FILE = "fakeout WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trainjam.fakeout.watchkitapp.watchkitextension;
@@ -436,13 +471,14 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
 			};
 			name = Debug;
 		};
 		F8A886FD1C920ED6008B59D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "fakeout WatchKit Extension/fakeout WatchKit Extension.entitlements";
 				INFOPLIST_FILE = "fakeout WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trainjam.fakeout.watchkitapp.watchkitextension;
@@ -450,7 +486,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
 			};
 			name = Release;
 		};
@@ -466,7 +502,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
 			};
 			name = Debug;
 		};
@@ -482,7 +518,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
 			};
 			name = Release;
 		};
@@ -490,7 +526,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = fakeout/fakeout.entitlements;
 				INFOPLIST_FILE = fakeout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trainjam.fakeout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -501,7 +539,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = fakeout/fakeout.entitlements;
 				INFOPLIST_FILE = fakeout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trainjam.fakeout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -527,6 +567,7 @@
 				F8A886FD1C920ED6008B59D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8A886FF1C920ED6008B59D2 /* Build configuration list for PBXNativeTarget "fakeout WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +576,7 @@
 				F8A887011C920ED6008B59D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8A887031C920ED6008B59D2 /* Build configuration list for PBXNativeTarget "fakeout" */ = {
 			isa = XCConfigurationList;
@@ -543,6 +585,7 @@
 				F8A887051C920ED6008B59D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
