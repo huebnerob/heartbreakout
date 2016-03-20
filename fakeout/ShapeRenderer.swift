@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreGraphics
+import WatchKit
 
 protocol Drawable
 {
@@ -47,20 +48,20 @@ final class Rect: Drawable
 
 final class ShapeRenderer
 {
-    static let size = CGSize(width: 78, height: 93)
+    var size = CGSize(width: 78, height: 93)
     static let backgroundColor = UIColor.clearColor()
     
     var shapes: [Drawable] = []
     
     func render() -> UIImage?
     {
-        UIGraphicsBeginImageContext(self.dynamicType.size)
+        UIGraphicsBeginImageContext(self.size)
         defer { UIGraphicsEndImageContext() }
     
         guard let context = UIGraphicsGetCurrentContext() else { return nil }
         
         CGContextSetFillColorWithColor(context, self.dynamicType.backgroundColor.CGColor)
-        CGContextFillRect(context, CGRect(origin: .zero, size: self.dynamicType.size))
+        CGContextFillRect(context, CGRect(origin: .zero, size: self.size))
         
         for shape in self.shapes
         {
@@ -130,3 +131,55 @@ final class RenderStepper
         }
     }
 }
+
+extension WKInterfacePicker
+{
+    private static var AssumedAspectRatio: CGFloat { return 312.0 / 39.0 }
+    private static var ImageWidth: CGFloat { return 390.0 }
+    private static var ImageCount: Int { return 10 }
+    private static var PaddleWidthRatio: CGFloat { return 0.4 }
+    private static var PaddleColor: UIColor { return UIColor.blueColor() }
+    
+    func setUpDog()
+    {
+        let paddleWidth = self.dynamicType.ImageWidth * self.dynamicType.PaddleWidthRatio
+        let paddleHeight = self.dynamicType.ImageWidth / self.dynamicType.AssumedAspectRatio
+        let paddleSize = CGSize(width: paddleWidth, height: paddleHeight)
+        let paddleY: CGFloat = 0.0
+        let firstPaddleX: CGFloat = 0.0
+        let firstPaddleOrigin = CGPoint(x: firstPaddleX, y: paddleY)
+        
+        let paddleXDelta: CGFloat = (self.dynamicType.ImageWidth - paddleWidth) / CGFloat(self.dynamicType.ImageCount - 1)
+        
+        let paddleRect = Rect(origin: firstPaddleOrigin, size: paddleSize)
+        paddleRect.fillColor = self.dynamicType.PaddleColor
+        paddleRect.stepFunction = { rect in
+            guard let rect = rect as? Rect else { return }
+            
+            rect.cgRect.offsetInPlace(dx: paddleXDelta, dy: 0.0)
+        }
+        
+        let renderer = ShapeRenderer()
+        renderer.size = CGSize(width: self.dynamicType.ImageWidth, height: self.dynamicType.ImageWidth / self.dynamicType.AssumedAspectRatio)
+        renderer.shapes.append(paddleRect)
+        
+        var images: [UIImage] = []
+        
+        for _ in 0..<self.dynamicType.ImageCount
+        {
+            guard let image = renderer.render() else { continue }
+            
+            images.append(image)
+            renderer.step()
+        }
+        
+        let items = images.map { image -> WKPickerItem in
+            let item = WKPickerItem()
+            item.contentImage = WKImage(image: image)
+            return item
+        }
+        
+        self.setItems(items)
+    }
+}
+

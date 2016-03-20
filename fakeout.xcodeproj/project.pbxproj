@@ -22,7 +22,6 @@
 		F8A886F31C920ED6008B59D2 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A886F21C920ED6008B59D2 /* InterfaceController.swift */; };
 		F8A886F51C920ED6008B59D2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A886F41C920ED6008B59D2 /* ExtensionDelegate.swift */; };
 		F8A886F71C920ED6008B59D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8A886F61C920ED6008B59D2 /* Assets.xcassets */; };
-		F8A887071C9252F7008B59D2 /* ShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A887061C9252F7008B59D2 /* ShapeRenderer.swift */; };
 		F8A887081C9252F7008B59D2 /* ShapeRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A887061C9252F7008B59D2 /* ShapeRenderer.swift */; };
 /* End PBXBuildFile section */
 
@@ -318,7 +317,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A886D21C920ED6008B59D2 /* ViewController.swift in Sources */,
-				F8A887071C9252F7008B59D2 /* ShapeRenderer.swift in Sources */,
 				F8A886D01C920ED6008B59D2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,16 +10,18 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="fakeout_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" height="1" alignment="left" id="fsr-8e-Q5S">
+                        <group width="1" height="0.90000000000000002" alignment="left" id="fsr-8e-Q5S">
                             <items>
                                 <label alignment="center" verticalAlignment="center" text="99 BPM" id="Sao-12-16Y"/>
                             </items>
                         </group>
+                        <picker width="1" height="0.10000000000000001" alignment="center" verticalAlignment="center" style="sequence" id="c2f-Ol-fZg"/>
                     </items>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="centeredLabel" destination="Sao-12-16Y" id="1ig-tE-tTn"/>
                         <outlet property="mainGroup" destination="fsr-8e-Q5S" id="29I-fa-rNd"/>
+                        <outlet property="paddlePicker" destination="c2f-Ol-fZg" id="s3V-Qx-BMu"/>
                     </connections>
                 </controller>
             </objects>

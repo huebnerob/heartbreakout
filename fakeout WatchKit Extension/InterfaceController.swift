@@ -12,6 +12,9 @@ final class InterfaceController: WKInterfaceController
 {
     @IBOutlet private weak var mainGroup: WKInterfaceGroup!
     @IBOutlet private weak var centeredLabel: WKInterfaceLabel!
+    @IBOutlet private weak var paddlePicker: WKInterfacePicker!
+    
+    private let heartRate = HeartRate()
     
     private var isSetup = false
     
@@ -22,17 +25,18 @@ final class InterfaceController: WKInterfaceController
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        guard !isSetup else { return }
+        guard !self.isSetup else { return }
         self.isSetup = true
+        
+        let renderer = ShapeRenderer()
         
         let rect = Rect(origin: CGPoint(x: 20.0, y: 25.0), size: CGSize(width: 5.0, height: 5.0))
         
         var verticalDirection: CGFloat = 1.0
         var horizontalDirection: CGFloat = 1.0
-        let maxSize = ShapeRenderer.size
+        let maxSize = renderer.size
         
-        rect.stepFunction =
-        { rect in
+        rect.stepFunction = { rect in
             guard let rect = rect as? Rect else { return }
             
             rect.cgRect.offsetInPlace(dx: self.speed * horizontalDirection, dy: self.speed * verticalDirection)
@@ -43,12 +47,9 @@ final class InterfaceController: WKInterfaceController
             if rect.cgRect.maxY > maxSize.height { verticalDirection = -1.0 }
             else if rect.cgRect.minY < 0.0 { verticalDirection = 1.0 }
         }
-        
-        let renderer = ShapeRenderer()
         renderer.shapes.append(rect)
         
-        let stepper = RenderStepper(renderer: renderer, stepInterval: 0.02)
-        { [weak self] image in
+        let stepper = RenderStepper(renderer: renderer, stepInterval: 0.02) { [weak self] image in
             self?.mainGroup.setBackgroundImage(image)
         }
         
@@ -56,15 +57,14 @@ final class InterfaceController: WKInterfaceController
         
         self.centeredLabel.setText("~.~")
         
-        let heartRate = HeartRate()
-        heartRate.startMonitoring { (newHeartRate) in
+        self.heartRate.startMonitoring { newHeartRate in
             
-            if newHeartRate > heartRate.averageHeartRate
+            if newHeartRate > self.heartRate.averageHeartRate
             {
                 self.centeredLabel.setTextColor(.redColor())
                 self.speed = 4.0
             }
-            else if newHeartRate < heartRate.averageHeartRate
+            else if newHeartRate < self.heartRate.averageHeartRate
             {
                 self.centeredLabel.setTextColor(.greenColor())
                 self.speed = 1.0
@@ -78,6 +78,15 @@ final class InterfaceController: WKInterfaceController
             self.centeredLabel.setText("\(Int(newHeartRate)) bpm")
         }
         
-        heartRate.requestPermission()
+        self.heartRate.requestPermission()
+        
+        self.paddlePicker.setUpDog()
+    }
+    
+    override func didDeactivate()
+    {
+        super.didDeactivate()
+        
+        self.heartRate.endMonitoring()
     }
 }
