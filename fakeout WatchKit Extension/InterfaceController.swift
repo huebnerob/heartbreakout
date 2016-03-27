@@ -14,7 +14,7 @@ final class InterfaceController: WKInterfaceController
     @IBOutlet private weak var centeredLabel: WKInterfaceLabel!
     @IBOutlet private weak var paddlePicker: WKInterfacePicker!
     
-    private let heartRate = HeartRate()
+    private let heartRate = HeartRateMonitor()
     
     private var isSetup = false
     

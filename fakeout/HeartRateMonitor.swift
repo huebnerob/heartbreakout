@@ -1,5 +1,5 @@
 //
-//  HeartRate.swift
+//  HeartRateMonitor.swift
 //  fakeout
 //
 //  Created by Robert Huebner on 3/11/16.
@@ -8,7 +8,7 @@
 
 import HealthKit
 
-final class HeartRate: NSObject, HKWorkoutSessionDelegate
+final class HeartRateMonitor: NSObject, HKWorkoutSessionDelegate
 {
     typealias HeartRateHandler = (newHeartRate: Double) -> Void
     

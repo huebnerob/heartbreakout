@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F834F1891C93A8280015EDAF /* HeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834F1871C93A7040015EDAF /* HeartRate.swift */; };
+		F834F1891C93A8280015EDAF /* HeartRateMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F834F1871C93A7040015EDAF /* HeartRateMonitor.swift */; };
 		F834F18B1C94BADD0015EDAF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F834F18A1C94BADD0015EDAF /* HealthKit.framework */; };
 		F834F18F1C94BAEF0015EDAF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F834F18E1C94BAEF0015EDAF /* HealthKit.framework */; };
 		F8A886D01C920ED6008B59D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A886CF1C920ED6008B59D2 /* AppDelegate.swift */; };
@@ -68,7 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F834F1871C93A7040015EDAF /* HeartRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRate.swift; sourceTree = "<group>"; };
+		F834F1871C93A7040015EDAF /* HeartRateMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateMonitor.swift; sourceTree = "<group>"; };
 		F834F18A1C94BADD0015EDAF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.2.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		F834F18C1C94BADD0015EDAF /* fakeout WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "fakeout WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		F834F18D1C94BAEF0015EDAF /* fakeout.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = fakeout.entitlements; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 				F8A886D81C920ED6008B59D2 /* LaunchScreen.storyboard */,
 				F8A886DB1C920ED6008B59D2 /* Info.plist */,
 				F8A887061C9252F7008B59D2 /* ShapeRenderer.swift */,
-				F834F1871C93A7040015EDAF /* HeartRate.swift */,
+				F834F1871C93A7040015EDAF /* HeartRateMonitor.swift */,
 			);
 			path = fakeout;
 			sourceTree = "<group>";
@@ -327,7 +327,7 @@
 			files = (
 				F8A886F51C920ED6008B59D2 /* ExtensionDelegate.swift in Sources */,
 				F8A887081C9252F7008B59D2 /* ShapeRenderer.swift in Sources */,
-				F834F1891C93A8280015EDAF /* HeartRate.swift in Sources */,
+				F834F1891C93A8280015EDAF /* HeartRateMonitor.swift in Sources */,
 				F8A886F31C920ED6008B59D2 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
